@@ -30,7 +30,7 @@ Follow the following steps to patch Firefox to disable addon signing.
 1. In that profile directory (if you have one already), you will need to delete the subdirectory called `startupCache`.
 1. Start Firefox.
 1. Navigate to `about:config`.
-1. While on `about:config`, go to the Developer tools (F12 by default), and switch to the Console tab. Type in `ChromeUtils.import("resource://gre/modules/AppConstants.jsm").AppConstants.MOZ_REQUIRE_SIGNING`. If you see `false`, the patching has worked. If you see true, something has not worked. If it did not work, ensure you have run the `patch-firefox.sh` script with the correct MOZILLA_HOME, and that you have successfully deleted the startupCache before starting, Firefox and try again.
+1. While on `about:config`, go to the Developer tools (F12 by default), and switch to the Console tab. Type in `ChromeUtils.import("resource://gre/modules/AppConstants.jsm").AppConstants.MOZ_REQUIRE_SIGNING`. If you see `false`, the patching has worked. If you see true, something has not worked. If it did not work, ensure you have run the `patch-firefox.sh` script with the correct MOZILLA_HOME, and that you have successfully deleted the startupCache before starting Firefox, and try again.
 1. In `about:config`, search for xpinstall.signatures.required, and change the value to false if it is true.
 1. Copy your extension into the extensions subdirectory of your Firefox profile directory.
 1. Restart Firefox. Firefox will prompt to confirm that you want to enable the addon.
